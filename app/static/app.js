@@ -19,7 +19,30 @@ const options = {
     },
     label: {
         fontFamily: 'Poppins'
-    }
+    },
+    tooltip: {
+        enabled: true,
+        format: function(label,value) {
+            return label + ': ' + value;
+        }
+    },events: {
+        click: {
+            block(d) {
+                modal.style.display = "block";
+                var output = "<span class='close'>&times;</span>" + "<h3 style='color:" + d.fill.raw + "'> Plus d'informations : </h3>" +
+                    "<p style='color:" + d.fill.raw + "'>" + d.label.formatted + "</p>" + "<p> Une éventuelle description </p>";
+                document.getElementsByClassName("modal-content")[0].innerHTML = output;
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+            },
+        },
+    },
 };
 
 var funnelArray = [];
@@ -73,3 +96,11 @@ function clearFunnel(div){
         d3.select("#" + element.container.id).selectAll('svg').remove());
 }
 
+var modal = document.getElementById("myModal");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+}
