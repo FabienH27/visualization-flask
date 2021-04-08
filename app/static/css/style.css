@@ -6,7 +6,7 @@ body{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 150px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -38,6 +38,13 @@ text-decoration: none;
 cursor: pointer;
 }
 
-.d3-funnel-tooltip {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans;
+    font-size: 20px;
+    display:flex;
+}
+
+#content #radios{
+    display:flex;
+    flex-direction: column;
 }

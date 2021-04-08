@@ -68,7 +68,7 @@ function initiateFunnel(){
     }
     for (let i = 0; i < data.length; i++) {
         datalist = data[i];
-        output += '<input type="radio" value="'+ datalist[0] +'" name="funnel">' + datalist[0] +'</input>';
+        output += '<div><input type="radio" value="'+ datalist[0] +'" name="funnel">' + datalist[0] +'</input></div>';
         document.getElementById("radios").innerHTML = output;
     }
     rbs = document.querySelectorAll("input[name='funnel']");
