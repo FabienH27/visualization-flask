@@ -6,6 +6,6 @@ Visualizing data with the library D3.js under Flask
 
 - Create an python environment
 - run `pip install -r requirements.txt`
-- move to app folder
 - Clone the repository
+- cd to app folder
 - Run app with `flask run`
