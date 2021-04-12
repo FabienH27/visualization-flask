@@ -13,7 +13,7 @@ function mouseover(data) {
     var c = getcrumbpath(data);
     i(c);
     d3
-        .selectAll(".skills-sunburst path")
+        .selectAll(".datas-sunburst path")
         .style("opacity", .3), sunburst
         .selectAll("path")
         .filter(function (a) { return c.indexOf(a) >= 0 })
@@ -36,7 +36,7 @@ function getcrumbpath(a) {
 }
 function initbreadcrumb() {
     d3
-        .select("#skills-chart-breadcrumb")
+        .select("#datas-chart-breadcrumb")
         .append("svg:svg")
         .attr("width", 500)
         .attr("height", 50)
@@ -55,11 +55,11 @@ function h(a, d3) {
 function i(a) {
     a[a.length - 1]._color, a.length;
     var c = d3
-        .select("#skills-chart-breadcrumb .trail")
+        .select("#datas-chart-breadcrumb .trail")
         .selectAll("g")
         .remove();
     c = d3
-        .select("#skills-chart-breadcrumb .trail")
+        .select("#datas-chart-breadcrumb .trail")
         .selectAll("g")
         .data(a, function (a) { return a.key + a.depth });
     var d = c.enter().append("svg:g");
@@ -133,13 +133,13 @@ var chart = function (d3) {
             .append("path")
             .datum(b)
             .attr("class", "line")
-            .attr("id", "skills-chart-line")
+            .attr("id", "datas-chart-line")
             .attr("d", n)
             .attr("stroke", function () { return c._color })
     }
     function refreshChart(data) {
         var e = processdata(data),
-            f = d3.select("#skills-chart-line");
+            f = d3.select("#datas-chart-line");
         null === f[0][0] 
         ? c(e, data) 
         : f
@@ -182,7 +182,7 @@ var chart = function (d3) {
             return k(a.p)
         }),
         cpath = d3
-            .select(".skills-chart")
+            .select(".datas-chart")
             .append("svg")
             .attr("width", g + rect.left + rect.right)
             .attr("height", h + rect.top + rect.bottom)
@@ -202,7 +202,7 @@ var chart = function (d3) {
         t: 7
     },
     sunburst = d3
-        .select(".skills-sunburst")
+        .select(".datas-sunburst")
         .append("svg:svg")
         .attr("width", width)
         .attr("height", height)
@@ -247,7 +247,7 @@ var t = function (a, b) {
 var coloralternative = 0
 initbreadcrumb();
 var path = sunburst
-    .data(d3.entries(skillsdata))
+    .data(d3.entries(data))
     .selectAll("g")
     .data(proficiencydata)
     .enter()
@@ -271,7 +271,7 @@ path.
     .attr("display", function (a) { return a.children ? null : "none" })
     .on("mouseover", mouseover); 
 d3
-    .select(".skills-sunburst")
+    .select(".datas-sunburst")
     .on("mouseleave", mouseleave); 
 l = path.node().__data__.value; 
 sunburst

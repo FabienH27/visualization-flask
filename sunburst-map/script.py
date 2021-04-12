@@ -6,4 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    with open('data.json',encoding='utf-8') as json_file:
+        data = json.load(json_file)
+    return render_template('index.html',data=data)

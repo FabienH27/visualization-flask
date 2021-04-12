@@ -37,6 +37,6 @@ with open(file,encoding='utf-8-sig') as fh:
                     tempData[dt][key].update(prodList)
 
 #Ecriture dans le fichier
-out_file = open("test.json", "w",encoding='utf-8')
+out_file = open("data.json", "w",encoding='utf-8')
 json.dump(data, out_file, indent=4,ensure_ascii=False)
 out_file.close()

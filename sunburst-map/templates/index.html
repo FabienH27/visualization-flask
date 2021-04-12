@@ -10,12 +10,12 @@
 <body>
     <h1>Sunburst-map</h1>
 
-    <div id="skills">
-        <div id="skillmap">
-          <div class="skills-wrapper">
-            <div class="skills-sunburst"></div>
-            <div class="skills-chart">
-              <div id="skills-chart-breadcrumb"></div>
+    <div id="datas">
+        <div id="datamap">
+          <div class="datas-wrapper">
+            <div class="datas-sunburst"></div>
+            <div class="datas-chart">
+              <div id="datas-chart-breadcrumb"></div>
             </div>
           </div>
         </div>
@@ -23,7 +23,9 @@
 
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/js/skillsdata.js"></script>
+    <script type="text/javascript">
+        var data = JSON.parse('{{data|tojson}}');
+    </script>	
     <script type="text/javascript" src="../static/js/sunburst.js"></script>
 </body>
 </html>
